@@ -6,37 +6,27 @@ $(document).ready(function() {
 		json => renderGif(json.data)
 	);
 
-	// Initiate gifLoop for set interval
+	/* Var */
 	var refresh;
-	// Duration count in seconds
-	const duration = 1000 * 7;
-
-	// Target gif-wrap container
+	const duration = 1000 * 10;
 	const $gif = $("#gif");
 
-
-
-	// Display Gif in gif wrap container
+	/* Display Gif */
 	var renderGif = _giphy => {
-		// Set gif as bg image
 		$gif.css({
 			"background-image": 'url("' + _giphy.image_original_url + '")'
 		});
-
-		// Start duration countdown
 		refreshRate();
 	};
 
-	// Call for new gif after duration
+	/* Refresh */
 	var refreshRate = () => {
-		// Reset set intervals
 		clearInterval(refresh);
 		refresh = setInterval(function() {
-			// Call Giphy API for new gif
 			newGif();
 		}, duration);
 	};
 
-	// Call Giphy API for new gif
+	/* New Gif */
 	newGif();
 });
