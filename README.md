@@ -1,5 +1,5 @@
 # facepalm.eu
 
-Experiment with facepalm emoji.
+Experiment with Giphy API.
 
 [facepalm.eu](https://facepalm.eu)
